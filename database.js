@@ -1,4 +1,40 @@
-const sqlite3 = require('sqlite3').verbose()
+import { Sequelize } from 'sequelize';
+
+const sequelize = new Sequelize({
+    dialect: 'sqlite',
+    storage: './database.sqlite'
+});
+
+export default sequelize;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const sqlite3 = require('sqlite3').verbose()
 const dbName = 'UsersDB'
 
 let db = new sqlite3.Database(dbName, (err) => {
@@ -15,4 +51,4 @@ let db = new sqlite3.Database(dbName, (err) => {
         }
 })
 
-module.exports = db;
+module.exports = db;*/
