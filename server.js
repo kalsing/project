@@ -1,29 +1,47 @@
-const express = require('express')
+import express from "express";
+import sequelize from "./database.js";
+import User from "./User.js";
 
-
-const app = express()
-app.use(express.json())
-users = []
-
-
-app.post('/users', (req, res) => {
-    users.push(req.body)
-    res.send('POST Concluido')
-})
-
-app.get('/users', (req, res) => {
-res.json(users)
-res.send('GET Concluido')
-})
+const app = express();
+app.use(express.json());
 
 
 
-app.listen(3000);
+app.post("/users", async (req, res) => {
+    try {
+        const user = await User.create(req.body);
+        res.json(user);
+    } catch (error) {
+        res.send(error)
+    }
+});
 
 
 
-// Port: 5432
-//Password: Gabik0803
-//
+app.get("/users", async (req, res) => {
+  try {
+    const users = await User.findAll();
+    res.json(users);
+  } catch (error) {
+    res.send(error)
+  }
+});
 
 
+
+
+
+async function startServer() {
+    try {
+        await sequelize.sync();
+        console.log("banco inicializado");
+
+        app.listen(3000, () => {
+            console.log("servidor na porta 3000");
+        });
+    } catch (error) {
+        console.error("erro", error);
+    }
+}
+
+startServer();
