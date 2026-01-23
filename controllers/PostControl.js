@@ -6,7 +6,7 @@ class PostControl {
   async create(req, res) {
     const post = await Post.create({
       title: req.body.title,
-      UserId: req.body.userId
+      userId: req.body.userId
     });
     return res.json(post);
   }
