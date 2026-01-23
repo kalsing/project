@@ -24,7 +24,7 @@ app.use(router);
 
 async function startServer() {
     try {
-        await sequelize.sync({ force: true });
+        await sequelize.sync();
         console.log("banco inicializado");
 
         app.listen(3000, () => {
