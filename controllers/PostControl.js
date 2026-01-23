@@ -12,6 +12,7 @@ class PostControl {
     return res.json(post);
   }
 
+
   async showAll(req, res) {
     const posts = await Post.findAll({
       include: User,
@@ -19,6 +20,7 @@ class PostControl {
     });
     return res.json(posts);
   }
+
 
   async update(req, res) {
     const updated = await Post.update(
@@ -29,6 +31,7 @@ class PostControl {
     return res.json(await Post.findByPk(req.params.id));
   }
 
+  
   async destroy(req, res) {
     const deleted = await Post.destroy({
       where: { id: req.params.id }

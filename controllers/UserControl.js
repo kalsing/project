@@ -11,11 +11,13 @@ class UserControl {
     return res.json(user);
   }
 
+
   async showAllUsers(req, res) {
     const users = await User.findAll({
     });
     return res.json(users);
   }
+
 
   async updateUser(req, res) {
     const updated = await User.update(
@@ -26,6 +28,7 @@ class UserControl {
     return res.json(await User.findByPk(req.params.id));
   }
 
+  
   async destroyUser(req, res) {
     const deleted = await User.destroy({
       where: {id: req.params.id}

@@ -2,10 +2,10 @@ import express from "express";
 import sequelize from "./database.js";
 import User from "./tables/User.js";
 import Post from "./tables/Post.js";
-import { mapWhereFieldNames } from "sequelize/lib/utils";
 import PostControl from "./controllers/PostControl.js";
 import router from "./routes.js";
 import Like from "./tables/Like.js";
+import cors from "cors";
 
 
 User.hasMany(Post);
@@ -18,13 +18,14 @@ User.hasMany(Like);
 Post.hasMany(Like);
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(router);
 
 
 async function startServer() {
     try {
-        await sequelize.sync();
+        await sequelize.sync({ force: true });
         console.log("banco inicializado");
 
         app.listen(3000, () => {
