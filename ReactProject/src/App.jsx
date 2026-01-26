@@ -6,8 +6,9 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-<>
-</>
+    <div>
+      <h1> Ola react </h1>
+    </div>
   )
 }
 
