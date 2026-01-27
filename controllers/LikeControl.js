@@ -15,7 +15,13 @@ class LikeControl {
     return res.json(like);
   }
 
-
+  async countLikes(req, res) {
+    const totalLikes = Like.count(
+    where: {
+      PostId, PostId
+    })
+    return res.json ({ totalLikes });
+  };
   
   async unlike(req, res) {
         const userId = req.body.userId;
