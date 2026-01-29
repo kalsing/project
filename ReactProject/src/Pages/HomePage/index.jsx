@@ -1,5 +1,5 @@
 import { useState } from "react"
-import api from "../apis/api"
+import api from "../../apis/api"
 
 function HomePage() {
   const [nome, setNome] = useState("")
@@ -31,4 +31,4 @@ function HomePage() {
     </div>
   )}
 
-export default HomePage
+export default HomePage;
