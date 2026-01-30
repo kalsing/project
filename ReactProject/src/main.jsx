@@ -4,8 +4,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import Index from "./Pages/HomePage/Homepage"
-import HomePage from './Pages/HomePage/Homepage';
+import HomePage from "./Pages/HomePage/index";
 
 import { CssBaseline } from "@mui/material";
 
