@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import api from "../../apis/api"
+import { Button, TextField, Typography } from "@mui/material";
 
 function HomePage() {
   const [userData, setUserData] = useState([]);
@@ -38,21 +39,28 @@ function HomePage() {
   }, [postData])
 
   return (
-<div className="CreateUser">
-  <input
-        type="text"
-        placeholder="Nome"
-        value={nome}
-        onChange={(e) => setNome(e.target.value)}
-/>
 
- <input
-        type="text"
-        placeholder="Sobrenome"
-        value={sobrenome}
-        onChange={(e) => setSobrenome(e.target.value)}
-/>
-    <button onClick={postUser}>Enviar</button>
+
+<div className="CreateUser">
+  <TextField
+    id="outlined-basic"
+    variant="outlined"
+    label="Nome"
+    value={nome}
+    onChange={(e) => setNome(e.target.value)}> 
+  </TextField>
+
+  <TextField
+    id="outlined-basic"
+    variant="outlined"
+    label="Sobrenome"
+    value={sobrenome}
+    onChange={(e) => setSobrenome(e.target.value)}> 
+  </TextField>
+    <Button
+    variant="outlined">
+      Criar Usuario
+    </Button>
     </div>
 
     
