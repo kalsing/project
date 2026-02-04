@@ -184,7 +184,7 @@ function HomePage() {
                     display: 'flex',
                     alignItems: 'center'
                   }}>
-
+                  <FavoriteIcon sx={{ fontSize: 18, mr: 0.5 }} />
                   {post.Likes.length}
                 </Typography>
                 <Button
