@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import api from "../../apis/api"
 import { Box, Button, TextField, Typography, Paper } from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import chan from "../../assets/3chan 2icon.png"
+
 
 function HomePage() {
   const [userData, setUserData] = useState([]);
@@ -64,6 +66,22 @@ function HomePage() {
       flexDirection: 'column',
       alignItems: 'center'
     }}>
+      
+<Box sx={{ 
+  position: 'fixed', 
+  top: 20, 
+  right: 20, 
+  zIndex: 1100 
+}}>
+  <Box
+    component="img"
+    src={chan}
+    sx={{ 
+      width: 45, 
+      height: 45, 
+    }}
+  />
+</Box>
 
       <Paper elevation={3}
         sx={{
