@@ -9,29 +9,34 @@ function HomePage() {
   const [nome, setNome] = useState("")
   const [sobrenome, setSobrenome] = useState("")
   const [titulo, setTitulo] = useState("")
+  const [conteudo, setConteudo] = useState("")
   const [id, setId] = useState("")
-  
 
   async function createUser() {
-    await api.post("/users", {
+    const response = await api.post("/users", {
       firstName: nome, 
       lastName: sobrenome
-     })
+    });
+    setId(response.data.id);
   }
 
   async function createPost() {
     await api.post("/posts", {
-       title: titulo,
-       userId: id 
-      })
+      title: titulo,
+      content: conteudo,
+      userId: id 
+    });
+    setTitulo("");
+    getPostData();
   }
 
-async function createLike(postId) {
-  await api.post("/likes", {
-    userId: Number(id),
-    postId: Number(postId) 
-  });
-}
+  async function createLike(postId) {
+    await api.post("/likes", {
+      userId: Number(id),
+      postId: Number(postId) 
+    });
+    getPostData(); 
+  }
 
   async function getUserData() {
     const getUserResponse = await api.get("/users");
@@ -147,30 +152,28 @@ async function createLike(postId) {
 
               <Typography variant="caption"
                 color="gray"
-              >ID Autor: {post.UserId}
+              >ID Autor: {post.userId}
               </Typography>
 
               <Typography variant="caption"
                 color="#f44336"
+                sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
               >
                 {post.Likes?.length || 0} 
                 
                 <Button 
-        size="small" 
-        variant="outlined" 
-        color="error"
-        onClick={() => createLike(post.id)}
-        sx={{ fontSize: '0.7rem', py: 0 }}
-      >
-        Like
-      </Button>
-
+                  size="small" 
+                  variant="outlined" 
+                  color="error"
+                  onClick={() => createLike(post.id)}
+                >
+                  Like
+                </Button>
               </Typography>
             </Box>
           </Paper>
         ))}
       </Box>
-
     </Box>
   );
 }
