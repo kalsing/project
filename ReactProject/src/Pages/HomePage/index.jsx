@@ -56,7 +56,7 @@ function HomePage() {
 
   return (
     <Box sx={{
-      backgroundColor: "darkgrey",
+      backgroundColor: "black",
       minHeight: '100vh',
       p: 2,
       position: 'relative',
@@ -67,6 +67,7 @@ function HomePage() {
 
       <Paper elevation={3}
         sx={{
+          backgroundColor: "#4f4f4f",
           p: 2,
           width: 250,
           position: 'fixed',
@@ -77,14 +78,17 @@ function HomePage() {
           gap: 1.5,
           zIndex: 1000
         }}>
-        <Typography variant="subtitle1"
-          fontWeight="bold">
+        <Typography
+          variant="subtitle1"
+          fontWeight="bold"
+          color="white">
           Login</Typography>
 
         <TextField
           label="Nome"
           variant="outlined"
           size="small"
+          color="white"
           fullWidth
           value={nome}
           onChange={(e) => setNome(e.target.value)}
@@ -106,6 +110,7 @@ function HomePage() {
 
       <Paper elevation={2}
         sx={{
+          backgroundColor: "#4f4f4f",
           p: 3,
           width: '100%',
           maxWidth: 600,
@@ -115,8 +120,10 @@ function HomePage() {
           mt: 4,
           mb: 6
         }}>
-        <Typography variant="h6"
-          fontWeight="bold">
+        <Typography
+          variant="h6"
+          fontWeight="bold"
+          color="white">
           Novo Post</Typography>
 
         <TextField
@@ -137,6 +144,7 @@ function HomePage() {
       <Box sx={{ width: '100%', maxWidth: 800, mb: 4 }}>
         <Typography variant="h5"
           sx={{
+            color: "white",
             mb: 3,
             fontWeight: 'bold',
             textAlign: 'center'
@@ -148,11 +156,11 @@ function HomePage() {
             sx={{
               p: 3,
               mb: 3,
-              bgcolor: 'white',
+              bgcolor: '#4f4f4f',
               borderRadius: 2
             }}>
             <Typography variant="h6"
-              color="primary"
+              color="white"
               fontWeight="bold">
               {post.title}
             </Typography>
@@ -163,7 +171,7 @@ function HomePage() {
               justifyContent: 'space-between',
               alignItems: 'center',
               pt: 2,
-              borderTop: '1px solid #eee'
+              borderTop: '1px solid #460000fb'
             }}>
               <Typography
                 variant="caption"
