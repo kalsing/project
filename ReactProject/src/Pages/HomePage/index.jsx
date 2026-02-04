@@ -108,13 +108,6 @@ function HomePage() {
           onChange={(e) => setTitulo(e.target.value)}
         />
 
-        <TextField
-          label="ID do Autor"
-          variant="outlined"
-          fullWidth
-          value={id}
-          onChange={(e) => setId(e.target.value)}
-        />
 
         <Button variant="contained"
           color="secondary"
