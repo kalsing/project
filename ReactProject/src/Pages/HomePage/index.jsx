@@ -20,6 +20,7 @@ function HomePage() {
       lastName: sobrenome
     });
     setId(response.data.id);
+    getUserData();
   }
 
   async function createPost() {
