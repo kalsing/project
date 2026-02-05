@@ -6,7 +6,11 @@ const Post = sequelize.define("Post", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  content:{
+    type: DataTypes.STRING,
+    allowNull: false,
   }
+}
 );
 
 export default Post;
