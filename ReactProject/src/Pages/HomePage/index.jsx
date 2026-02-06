@@ -95,10 +95,13 @@ function HomePage() {
       
       <Box>
             {id ? (
-          <Typography color="#00eeff"
+          <Typography
+          variant="h5"
+          color="#00eeff"
           >Logado como: {nome} {sobrenome}</Typography>
         ) : (
           <Typography color = "red"
+          variant="h5"
           >Faça login</Typography>
         )}
         </Box>
