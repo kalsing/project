@@ -3,6 +3,7 @@ import api from "../../apis/api"
 import { Box, Button, TextField, Typography, Paper } from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import chan from "../../assets/3chan 2icon.png"
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 function HomePage() {
@@ -241,6 +242,12 @@ function HomePage() {
                   onClick={() => createLike(post.id)}
                 >
                   Curtir
+                </Button>
+                <Button
+                size="small"
+                startIcon={<DeleteIcon />}
+                onClick={() => deletePost(post.id)}>
+
                 </Button>
               </Box>
             </Box>
