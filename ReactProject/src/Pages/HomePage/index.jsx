@@ -79,16 +79,16 @@ function HomePage() {
 
       <Box sx={{
         position: 'fixed',
-        top: 20,
-        right: 20,
+        top: 0,
+        right: 5,
         zIndex: 1100
       }}>
         <Box
           component="img"
           src={chan}
           sx={{
-            width: 45,
-            height: 45,
+            width: 110,
+            height: 110,
           }}
         />
       </Box>
@@ -123,7 +123,7 @@ function HomePage() {
         <Typography
           variant="subtitle1"
           fontWeight="bold"
-          color="white">
+          color="black">
           Login</Typography>
           
 
@@ -146,7 +146,9 @@ function HomePage() {
           value={sobrenome}
           onChange={(e) => setSobrenome(e.target.value)}
         />
-        <Button variant="contained"
+        <Button
+          color="success"
+          variant="contained"
           size="small"
           onClick={createUser}>
           Logar</Button>
@@ -170,7 +172,7 @@ function HomePage() {
         <Typography
           variant="h4"
           fontWeight="bold"
-          color="white">
+          color="black">
           Novo Post</Typography>
 
         <TextField
@@ -191,7 +193,7 @@ function HomePage() {
 
         <Button
           variant="contained"
-          color="secondary"
+          color="warning"
           onClick={createPost}
         >Enviar Post</Button>
       </Paper>
@@ -215,13 +217,13 @@ function HomePage() {
               borderRadius: 2
             }}>
             <Typography variant="h4"
-              color="white"
+              color="black"
               fontWeight="bold">
               {post.title}
             </Typography>
 
             <Typography variant="h6"
-              color="white"
+              color="#00ff0d"
               fontWeight="bold">
               {post.content}
             </Typography>
