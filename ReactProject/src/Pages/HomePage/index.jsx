@@ -24,13 +24,13 @@ function HomePage() {
     getUserData();
   }
 
-  async function deletePost(postId, postUserId){
-    if(Number(id) == postUserId){
-   const response = await api.delete(`posts/${postId}`, {
-    })
-    getPostData();
-  }
+  async function deletePost(postId, postUserId) {
+    if (Number(id) == postUserId) {
+      const response = await api.delete(`posts/${postId}`, {
+      })
+      getPostData();
     }
+  }
 
   async function createPost() {
     await api.post("/posts", {
@@ -76,22 +76,33 @@ function HomePage() {
       flexDirection: 'column',
       alignItems: 'center'
     }}>
+
+      <Box sx={{
+        position: 'fixed',
+        top: 20,
+        right: 20,
+        zIndex: 1100
+      }}>
+        <Box
+          component="img"
+          src={chan}
+          sx={{
+            width: 45,
+            height: 45,
+          }}
+        />
+      </Box>
       
-<Box sx={{ 
-  position: 'fixed', 
-  top: 20, 
-  right: 20, 
-  zIndex: 1100 
-}}>
-  <Box
-    component="img"
-    src={chan}
-    sx={{ 
-      width: 45, 
-      height: 45, 
-    }}
-  />
-</Box>
+      <Box>
+            {id ? (
+          <Typography color="#00eeff"
+          >Logado como: {nome} {sobrenome}</Typography>
+        ) : (
+          <Typography color = "red"
+          >Faça login</Typography>
+        )}
+        </Box>
+        
 
       <Paper elevation={3}
         sx={{
@@ -111,6 +122,7 @@ function HomePage() {
           fontWeight="bold"
           color="white">
           Login</Typography>
+          
 
         <TextField
           label="Nome"
@@ -121,6 +133,8 @@ function HomePage() {
           value={nome}
           onChange={(e) => setNome(e.target.value)}
         />
+
+
         <TextField
           label="Sobrenome"
           variant="outlined"
@@ -133,6 +147,8 @@ function HomePage() {
           size="small"
           onClick={createUser}>
           Logar</Button>
+
+
 
       </Paper>
 
@@ -163,11 +179,11 @@ function HomePage() {
         />
 
         <TextField
-        label="Conteudo do Post"
-        variant="outlined"
-        fullWidth
-        value={conteudo}
-        onChange={(e) => setConteudo(e.target.value)}
+          label="Conteudo do Post"
+          variant="outlined"
+          fullWidth
+          value={conteudo}
+          onChange={(e) => setConteudo(e.target.value)}
         />
 
         <Button
@@ -201,7 +217,7 @@ function HomePage() {
               {post.title}
             </Typography>
 
-        <Typography variant="h6"
+            <Typography variant="h6"
               color="white"
               fontWeight="bold">
               {post.content}
@@ -246,18 +262,18 @@ function HomePage() {
                   Curtir
                 </Button>
                 {Number(id) === post.userId && (
-  <IconButton 
-    color="error"
-    size="small"
-    onClick={() => deletePost(post.id, post.userId)}
-    sx={{
-        backgroundColor: '#00000071'
-      }
-    }
-  >
-    <DeleteIcon fontSize="small" />
-  </IconButton>
-)}
+                  <IconButton
+                    color="error"
+                    size="small"
+                    onClick={() => deletePost(post.id, post.userId)}
+                    sx={{
+                      backgroundColor: '#00000071'
+                    }
+                    }
+                  >
+                    <DeleteIcon fontSize="small" />
+                  </IconButton>
+                )}
               </Box>
             </Box>
           </Paper>
