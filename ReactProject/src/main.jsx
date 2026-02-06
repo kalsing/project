@@ -5,14 +5,16 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import HomePage from "./Pages/HomePage/index";
-
-import { CssBaseline } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import theme from './Pages/HomePage/theme';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <>
       <CssBaseline />
-      <HomePage />
+      <ThemeProvider theme={theme}>
+        <HomePage />
+      </ThemeProvider>
     </>
   </StrictMode>
 );
