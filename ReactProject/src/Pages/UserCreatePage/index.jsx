@@ -15,6 +15,9 @@ function UserCreate() {
             firstName: nome,
             lastName: sobrenome
         })
+        getUserData();
+        setNome("");
+        setSobrenome("");
     }
 
     async function getUserData() {
@@ -78,7 +81,7 @@ function UserCreate() {
                     variant="outlined"
                     fullWidth
                     value={nome}
-                    onChange={(e) => setConteudo(e.target.value)}>
+                    onChange={(e) => setNome(e.target.value)}>
                 </TextField>
 
                 <TextField
@@ -86,7 +89,7 @@ function UserCreate() {
                     variant="outlined"
                     fullWidth
                     value={sobrenome}
-                    onChange={(e) => setConteudo(e.target.value)}>
+                    onChange={(e) => setSobrenome(e.target.value)}>
                 </TextField>
 
                 <Button
