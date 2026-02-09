@@ -182,22 +182,24 @@ function HomePage() {
             </Typography>
 
 
-            <Box sx={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              pt: 2,
-              borderTop: '1px solid #460000fb'
-            }}>
-              <Typography
-                variant="caption"
-                color="textSecondary">
+            <Box
+              sx={{
+                pt: 2,
+                borderTop: '1px solid #000000f8',
+              }}
+            >
+              <Typography variant="subtitle1" color="textSecondary" display="block">
                 Autor ID: {post.userId}
               </Typography>
 
+              <Typography variant="subtitle1" color="textSecondary" display="block">
+                Nome do Autor: {nome} {sobrenome}
+              </Typography>
+
+
               <Box sx={{
                 display: 'flex',
-                alignItems: 'center',
+                transform: "translateY(5px)",
                 gap: 1.5
               }}>
                 <Typography
