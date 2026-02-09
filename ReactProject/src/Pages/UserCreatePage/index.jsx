@@ -48,7 +48,7 @@ function UserCreate() {
             <Box sx={{
                 position: 'fixed',
                 top: 0,
-                right: 5,
+                left: 5,
                 zIndex: 1100
             }}>
                 <Box
