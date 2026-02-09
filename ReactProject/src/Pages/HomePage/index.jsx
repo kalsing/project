@@ -110,27 +110,6 @@ function HomePage() {
       </Box>
 
 
-      <Paper elevation={3}
-        sx={{
-          backgroundColor: "#4f4f4f",
-          p: 2,
-          width: 250,
-          position: 'fixed',
-          top: 20,
-          left: 20,
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 1.5,
-          zIndex: 1000
-        }}>
-        <Typography
-          variant="subtitle1"
-          fontWeight="bold"
-          color="black">
-          Login</Typography>
-
-      </Paper>
-
       <Paper elevation={2}
         sx={{
           backgroundColor: "#4f4f4f",
