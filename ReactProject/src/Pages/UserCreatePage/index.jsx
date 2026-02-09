@@ -10,7 +10,7 @@ function UserCreate() {
     const [nome, setNome] = useState("")
     const [sobrenome, setSobrenome] = useState("")
 
-    async function postUser() {
+    async function createUser() {
         await api.post("/users", {
             firstName: nome,
             lastName: sobrenome
@@ -57,10 +57,11 @@ function UserCreate() {
                 sx={{
                     backgroundColor: "#4f4f4f",
                     p: 2,
-                    width: 250,
+                    width: 500,
                     position: 'fixed',
-                    top: 20,
-                    left: 20,
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: 1.5,
@@ -72,10 +73,28 @@ function UserCreate() {
                     color="black">
                     Login</Typography>
 
-                <TextField>
-
-
+                <TextField
+                    label="Nome"
+                    variant="outlined"
+                    fullWidth
+                    value={nome}
+                    onChange={(e) => setConteudo(e.target.value)}>
                 </TextField>
+
+                <TextField
+                    label="Sobrenome"
+                    variant="outlined"
+                    fullWidth
+                    value={sobrenome}
+                    onChange={(e) => setConteudo(e.target.value)}>
+                </TextField>
+
+                <Button
+                    variant="contained"
+                    onClick={createUser}
+                >
+                    Logar
+                </Button>
 
             </Paper>
 
