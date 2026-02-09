@@ -12,11 +12,17 @@ import UserCreate from './Pages/UserCreatePage';
 
 const router = createBrowserRouter([
 {
+path: "",
+},
+{
 path: "/login",
+element: <UserCreate/>
 },
 
-
-
+{
+path: "/homepage",
+element: <HomePage/>
+}
 ]);
 
 
@@ -27,7 +33,7 @@ const root = createRoot(document.getElementById('root')).render(
     <>
       <CssBaseline />
       <ThemeProvider theme={theme}>
-        <UserCreate />
+        <RouterProvider router={router}/>
       </ThemeProvider>
     </>
   </StrictMode>
