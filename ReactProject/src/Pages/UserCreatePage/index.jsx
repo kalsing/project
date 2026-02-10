@@ -14,17 +14,20 @@ function UserCreate() {
     const navigate = useNavigate();
 
     async function createUser() {
-      const response = await api.post("/users", {
+        const response = await api.post("/users", {
             firstName: nome,
             lastName: sobrenome,
             userPassword: senha
         })
         getUserData();
-        navigate('/homepage', {state: {
+        navigate('/homepage', {
+            state: {
                 userId: response.data.id,
                 nome: nome,
                 sobrenome: sobrenome,
-            }});
+                senha: senha
+            }
+        });
     }
 
     async function getUserData() {
@@ -97,6 +100,14 @@ function UserCreate() {
                     fullWidth
                     value={sobrenome}
                     onChange={(e) => setSobrenome(e.target.value)}>
+                </TextField>
+                
+                <TextField
+                    label="senha"
+                    variant="outlined"
+                    fullWidth
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}>
                 </TextField>
 
                 <Button

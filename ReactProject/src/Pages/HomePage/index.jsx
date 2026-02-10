@@ -12,7 +12,7 @@ function HomePage() {
   const [titulo, setTitulo] = useState("")
   const [conteudo, setConteudo] = useState("")
   const location = useLocation();
-  const { userId, nome, sobrenome } = location.state;
+  const { userId, nome, sobrenome, senha } = location.state;
 
   async function deletePost(postId, postUserId) {
     if (Number(userId) == postUserId) {
