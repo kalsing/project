@@ -1,6 +1,6 @@
-import User from "../tables/User.js";
-import Post from "../tables/Post.js";
-import Like from "../tables/Like.js"
+import User from "../models/User.js";
+import Post from "../models/Post.js";
+import Like from "../models/Like.js"
 
 class LikeControl {
 

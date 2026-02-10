@@ -1,5 +1,5 @@
-import User from "../tables/User.js";
-import Post from "../tables/Post.js";
+import User from "../models/User.js";
+import Post from "../models/Post.js";
 
 class UserControl {
 

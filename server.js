@@ -1,10 +1,10 @@
 import express from "express";
 import sequelize from "./database.js";
-import User from "./tables/User.js";
-import Post from "./tables/Post.js";
+import User from "./models/User.js";
+import Post from "./models/Post.js";
 import PostControl from "./controllers/PostControl.js";
 import router from "./routes.js";
-import Like from "./tables/Like.js";
+import Like from "./models/Like.js";
 import cors from "cors";
 
 
