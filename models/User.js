@@ -12,6 +12,10 @@ const User = sequelize.define("User", {
     type: DataTypes.STRING,
     allowNull: false,
       },
+    userPassword: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
   },
   {
     indexes: [
