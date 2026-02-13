@@ -15,28 +15,6 @@ class UserControl {
     return res.json(user);
 }
 
-  async loginUser(req, res) {
-    const user = await User.findOne({
-      where:{
-        firstName: req.body.firstName,
-        lastName: req.body.lastName
-      }
-    });
-
-    if(!user){
-      return res.status(400).send()
-    }
-
-        if(user.userPassword !== userPassword){
-      return res.status(400).send()
-    }
-    return res.json({
-      firstName: user.firstName,
-      lastName: user.lastName
-    })
-  }
-
-
   async showAllUsers(req, res) {
     const users = await User.findAll({
     });
