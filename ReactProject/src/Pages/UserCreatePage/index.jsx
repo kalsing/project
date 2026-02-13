@@ -7,7 +7,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate } from "react-router-dom";
 
 function UserCreate() {
-    const [userData, setUserData] = useState([]);
     //#1
     const [nome, setNome] = useState("")
     const [sobrenome, setSobrenome] = useState("")
@@ -41,8 +40,9 @@ function UserCreate() {
 
         const userData = {
             userId: response.data.id,
-            nome: response.data.firstName,
-            lastName: response.data.lastName
+            firstName: response.data.firstName,
+            lastName: response.data.lastName,
+            userPassword: response.data.userPassword
 
         }
     localStorage.setItem("3chanUser", JSON.stringify(userData));

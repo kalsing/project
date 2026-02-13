@@ -4,27 +4,28 @@ import { useRadioGroup } from "@mui/material";
 
 class LoginControl {
 
-async loginUser(req, res) {
-    const { firstName, lastName, userPassword } = req.body;
+  async loginUser(req, res) {
+
     const user = await User.findOne({
-      where:{
+      where: {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         userPassword: req.body.userPassword
       }
     });
 
-    if(!user){
+    if (!user) {
       return res.status(400).send()
     }
 
-        if(user.userPassword !== userPassword){
+    if (user.userPassword !== req.body.userPassword) {
       return res.status(400).send()
     }
     return res.json({
-        userId: user.id,
+      userId: user.id,  
       firstName: user.firstName,
       lastName: user.lastName
     })
+  }
 }
-}
+export default LoginControl;
