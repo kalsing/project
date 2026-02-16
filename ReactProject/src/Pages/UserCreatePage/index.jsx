@@ -89,7 +89,7 @@ function UserCreate() {
                     width: 500,
                     position: 'fixed',
                     top: '50%',
-                    left: '50%',
+                    left: '25%',
                     transform: 'translate(-50%, -50%)',
                     display: 'flex',
                     flexDirection: 'column',
@@ -137,7 +137,17 @@ function UserCreate() {
 
              <Paper elevation={3}
                 sx={{
-            
+                                backgroundColor: "#4f4f4f",
+                    p: 2,
+                    width: 500,
+                    position: 'fixed',
+                    top: '50%',
+                    right: '0%',
+                    transform: 'translate(-50%, -50%)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 1.5,
+                    zIndex: 1000
                 }}>
                 <Typography
                     variant="subtitle1"
