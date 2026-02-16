@@ -206,7 +206,7 @@ function HomePage() {
               </Typography>
 
               <Typography variant="subtitle1" color="textSecondary" display="block">
-                Nome do Autor: {firstName} {lastName}
+                Nome do Autor: {post.User.firstName} {post.User.lastName}
               </Typography>
 
 
