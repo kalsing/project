@@ -1,20 +1,30 @@
 import User from "../models/User.js";
 import Post from "../models/Post.js";
 import bcrypt from "bcrypt"
+import jwt from 'jsonwebtoken';
 
 class UserControl {
 
   async createUser(req, res) {
     const { userPassword } = req.body
 
+
     const hash = await bcrypt.hash(userPassword, 10)
     //#1
     const user = await User.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      userPassword: hash
+      userPassword: hash,
     });
-    console.log(hash, userPassword)
+
+
+    const token = jwt.sign(
+      { id: user._id },
+      "4vesta",
+      { expiresIn: "15m" }
+    )
+
+    console.log(hash, userPassword, token)
     return res.json(user);
 }
 
