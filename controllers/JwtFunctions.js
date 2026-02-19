@@ -1,23 +1,14 @@
-import User from "../models/User.js";
-import Post from "../models/Post.js";
-import Like from "../models/Like.js"
+import jwt from "jsonwebtoken";
 
-   export function generateToken(userId) {
-        const secretKey = process.env.CHAVE;
-        const createToken = jwt.sign(
-            { userId },
-            secretKey,
-            { expiresIn: "15m" } 
-            
-        )
-        console.log(createToken);
-        return createToken;
-    }
+export function generateToken(id) {
+  const secretKey = process.env.CHAVE;
 
+  const createToken = jwt.sign(
+    { id: id },
+        "gabriel123",
+    { expiresIn: "15m" }
+  );
 
-
-
-
-
-
-
+  console.log(createToken);
+  return createToken;
+}

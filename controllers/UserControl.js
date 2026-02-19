@@ -11,7 +11,6 @@ class UserControl {
     const { userPassword } = req.body;
 
     const hash = await bcrypt.hash(userPassword, 10);
-    const token = generateToken
 
     //#1
     const user = await User.create({
@@ -19,8 +18,10 @@ class UserControl {
       lastName: req.body.lastName,
       userPassword: hash,
     });
+
+    const token = generateToken(user.id);
   
-    console.log(token, hash)
+    console.log(token)
 
     return res.json(user);
 }
