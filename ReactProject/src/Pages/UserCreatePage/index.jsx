@@ -42,6 +42,7 @@ function UserCreate() {
             userId: response.data.id,
             firstName: response.data.firstName,
             lastName: response.data.lastName,
+            token: response.data.token
 
 
         }
