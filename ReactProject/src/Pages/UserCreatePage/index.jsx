@@ -54,8 +54,15 @@ function UserCreate() {
 
 
 
-    useEffect(() => {
-    }, [])
+   useEffect(() => {
+    const userData = localStorage.getItem("3chanUser");
+    if (userData) {
+        const {token} = JSON.parse(userData);
+        if (token) {
+            navigate('/homepage');
+        }
+    }
+}, []);
 
     return (
         <Box sx={{
@@ -82,6 +89,8 @@ function UserCreate() {
                     }}
                 />
             </Box>
+
+            
 
             <Paper elevation={3}
                 sx={{
