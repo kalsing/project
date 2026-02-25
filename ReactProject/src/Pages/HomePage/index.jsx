@@ -17,8 +17,12 @@ function HomePage() {
   const navigate = useNavigate()
   const location = useLocation();
 
-  const theme = createTheme({ palette: { mode: tema ?
-     "dark" : "light" } })
+const theme = createTheme({
+  palette: { mode: tema ? "dark" : "light" },
+  typography: {
+    fontFamily: "Pixelify Sans, sans-serif"
+  }
+})
 
   const savedUser = JSON.parse(localStorage.getItem("3chanUser"));
   const currentUser = location.state || savedUser;
